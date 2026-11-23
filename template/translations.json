@@ -1,0 +1,54 @@
+{
+  "ja": {
+    "diameter": {
+      "name": "呼び径",
+      "comment": "ねじの呼び径（M8なら8）。ねじ山はこの値に合わせて自動で決まる"
+    },
+    "length": {
+      "name": "長さ",
+      "comment": "首下長さ（M8x20なら20）。頭の下から先端まで"
+    },
+    "thread_length": {
+      "name": "ねじ部長さ",
+      "comment": "ねじ部長さ b（JIS B 1180 / ISO 4014）: 長さ125以下は 2×呼び径+6、125超200以下は 2×呼び径+12、200超は 2×呼び径+25。長さ以上なら全ねじ"
+    },
+    "across_flats": {
+      "name": "二面幅",
+      "comment": "六角の二面幅 s（JIS B 1180 / ISO 4014）: M3=5.5 M4=7 M5=8 M6=10 M8=13 M10=16 M12=18 M16=24 M20=30"
+    },
+    "head_height": {
+      "name": "頭の高さ",
+      "comment": "頭の高さ k の基準寸法（JIS B 1180 / ISO 4014）: M3=2 M4=2.8 M5=3.5 M6=4 M8=5.3 M10=6.4 M12=7.5 M16=10 M20=12.5"
+    },
+    "chamfer_angle": {
+      "name": "面取り角度",
+      "comment": "頭の上面の角を落とす面取りの角度。上面から測る"
+    }
+  },
+  "en": {
+    "diameter": {
+      "name": "diameter",
+      "comment": "Nominal diameter (M8 = 8). The thread size follows this value automatically"
+    },
+    "length": {
+      "name": "length",
+      "comment": "Length under the head (M8x20 = 20), from under the head to the tip"
+    },
+    "thread_length": {
+      "name": "thread_length",
+      "comment": "Thread length b (ISO 4014 / JIS B 1180): length up to 125: 2d+6, over 125 up to 200: 2d+12, over 200: 2d+25. At or above length: fully threaded"
+    },
+    "across_flats": {
+      "name": "across_flats",
+      "comment": "Hex width across flats s (ISO 4014 / JIS B 1180): M3=5.5 M4=7 M5=8 M6=10 M8=13 M10=16 M12=18 M16=24 M20=30"
+    },
+    "head_height": {
+      "name": "head_height",
+      "comment": "Nominal head height k (ISO 4014 / JIS B 1180): M3=2 M4=2.8 M5=3.5 M6=4 M8=5.3 M10=6.4 M12=7.5 M16=10 M20=12.5"
+    },
+    "chamfer_angle": {
+      "name": "chamfer_angle",
+      "comment": "Angle of the chamfer on the head's top corners, measured from the top face"
+    }
+  }
+}

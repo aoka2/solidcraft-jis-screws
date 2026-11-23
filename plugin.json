@@ -1,0 +1,155 @@
+{
+  "id": "jis-hex-bolt",
+  "name": "JISボルト・小ねじ",
+  "version": "0.3.0",
+  "description": "頭の種類・サイズ・長さを選ぶと、JIS（一部メーカー寸法）のボルトや小ねじをねじ山つきで作ります",
+  "capabilities": [
+    "commands@0.2"
+  ],
+  "runtime": {
+    "module": "bolt.wasm",
+    "entries": [
+      {
+        "name": "make",
+        "effect": "edit",
+        "slots": [
+          {
+            "kind": "ribbon",
+            "name": "Model"
+          }
+        ],
+        "input_schema": {
+          "type": "object",
+          "title": "ボルト・小ねじ",
+          "properties": {
+            "head": {
+              "type": "string",
+              "title": "頭の種類",
+              "oneOf": [
+                {
+                  "const": "pan",
+                  "title": "ナベ（JIS B 1111・M3〜M10）",
+                  "x-solidcraft-icon": "icons/pan.svg"
+                },
+                {
+                  "const": "csk",
+                  "title": "皿（JIS B 1111・M3〜M10）",
+                  "x-solidcraft-icon": "icons/csk.svg"
+                },
+                {
+                  "const": "truss",
+                  "title": "トラス（JIS B 1111 附属書・M3〜M8）",
+                  "x-solidcraft-icon": "icons/truss.svg"
+                },
+                {
+                  "const": "smallcsk",
+                  "title": "小形皿（メーカー寸法・M3〜M8）",
+                  "x-solidcraft-icon": "icons/smallcsk.svg"
+                },
+                {
+                  "const": "hex",
+                  "title": "六角（JIS B 1180・M3〜M20）",
+                  "x-solidcraft-icon": "icons/hex.svg"
+                },
+                {
+                  "const": "flange",
+                  "title": "フランジ付き（JIS B 1189・M5〜M16）",
+                  "x-solidcraft-icon": "icons/flange.svg"
+                },
+                {
+                  "const": "socket",
+                  "title": "六角穴付き（JIS B 1176・M3〜M20）",
+                  "x-solidcraft-icon": "icons/socket.svg"
+                },
+                {
+                  "const": "button",
+                  "title": "ボタン（ISO 7380・M3〜M16）",
+                  "x-solidcraft-icon": "icons/button.svg"
+                },
+                {
+                  "const": "low",
+                  "title": "低頭（メーカー寸法・M3〜M20）",
+                  "x-solidcraft-icon": "icons/low.svg"
+                },
+                {
+                  "const": "ultralow",
+                  "title": "極低頭（メーカー寸法・M3〜M10）",
+                  "x-solidcraft-icon": "icons/ultralow.svg"
+                }
+              ],
+              "default": "hex"
+            },
+            "size": {
+              "type": "string",
+              "title": "サイズ",
+              "enum": [
+                "M3",
+                "M4",
+                "M5",
+                "M6",
+                "M8",
+                "M10",
+                "M12",
+                "M16",
+                "M20"
+              ],
+              "default": "M8"
+            },
+            "length": {
+              "type": "number",
+              "title": "長さ (mm)",
+              "minimum": 1,
+              "maximum": 300,
+              "default": 20
+            },
+            "thread": {
+              "type": "string",
+              "title": "ねじ",
+              "oneOf": [
+                {
+                  "const": "auto",
+                  "title": "規格どおり（六角・フランジは長いと半ねじ）"
+                },
+                {
+                  "const": "full",
+                  "title": "全ねじ"
+                }
+              ],
+              "default": "auto"
+            }
+          },
+          "required": [
+            "head",
+            "size",
+            "length"
+          ]
+        }
+      }
+    ],
+    "commands": [
+      "solid.cylinder",
+      "sketch.create",
+      "sketch.draw.dimensioned",
+      "sketch.polygon.circumscribed",
+      "sketch.constraint.horizontal_vertical",
+      "sketch.finish",
+      "solid.extrude",
+      "solid.thread",
+      "solid.cone",
+      "solid.combine",
+      "solid.fillet",
+      "solid.box",
+      "solid.sphere"
+    ],
+    "limits": {
+      "fuel": 50000000000,
+      "memory_mib": 128,
+      "deadline_ms": 30000
+    },
+    "permissions": {
+      "files": [],
+      "clock": false,
+      "command_groups": []
+    }
+  }
+}

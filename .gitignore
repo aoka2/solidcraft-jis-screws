@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.zip
+icons-preview.svg
+template/*.bak

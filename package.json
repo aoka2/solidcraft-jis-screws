@@ -1,0 +1,16 @@
+{
+  "name": "solidcraft-jis-screws",
+  "version": "0.3.0",
+  "private": true,
+  "description": "SolidCraft plugin: JIS bolts and machine screws with modelled threads",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/spec.test.mjs",
+    "build": "pwsh ./build.ps1"
+  },
+  "devDependencies": {
+    "@bytecodealliance/componentize-js": "^0.23.0",
+    "@bytecodealliance/jco": "^1.42.0"
+  }
+}
